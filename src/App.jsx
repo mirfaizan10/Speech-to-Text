@@ -10,7 +10,6 @@ function App() {
   const { transcript, browserSupportsSpeechRecognition, resetTranscript } =
     useSpeechRecognition();
   const [textToCopy, setTextToCopy] = useState();
-  const [isCopied, setCopied] = useClipboard(transcript);
   const startListening = () =>
     SpeechRecognition.startListening({ continuous: true, language: "en-IN" });
   const stopListening = () => SpeechRecognition.stopListening();
@@ -18,7 +17,16 @@ function App() {
     resetTranscript();
     setCopyButtonText("Copy");
   };
-
+  const handleCopy=async ()=>{
+    try{
+      await navigator.clipboard.writeText(transcript);
+      setCopyButtonText("Copied")
+    }
+    catch(err){
+      console.error("Failed to copy",err);
+      setCopyButtonText("Failed");
+    }
+  }
 
 
   if (!browserSupportsSpeechRecognition) {
@@ -58,11 +66,7 @@ function App() {
           </button>
           <button
             className="border-2 border-transparent font-serif px-4 py-2 m-2 bg-zinc-700 rounded-full ... text-yellow-500 hover:bg-zinc-900 hover:font-bold"
-            onClick={()=>{
-              
-              setCopied(); 
-              setCopyButtonText("Copied");
-            }}
+            onClick={handleCopy}
           >
             {copyButtonText}
           </button>
