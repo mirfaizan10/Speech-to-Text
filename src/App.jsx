@@ -2,7 +2,6 @@ import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
 import "./App.css";
-import useClipboard from "react-use-clipboard";
 import { useState } from "react";
 
 function App() {
