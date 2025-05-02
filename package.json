@@ -12,8 +12,8 @@
   "dependencies": {
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-speech-recognition": "^4.0.1",
-    "react-use-clipboard": "^1.0.9"
+    "react-speech-recognition": "^4.0.1"
+    
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
