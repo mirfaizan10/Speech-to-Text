@@ -34,7 +34,7 @@ function App() {
   return (
     <>
       <div className="container h-[100vh] bg-gradient-to-r from-emerald-500 via-cyan-700 to-blue-900 ... flex flex-col justify-center items-center">
-        <h2 className="m-6 p-4 font-serif font-medium text-4xl max-[680px]:text-2xl ">
+        <h2 className="m-6 p-4 font-serif font-medium text-4xl max-[680px]:text-sm ">
           Speech to Text Converter
         </h2>
         <div
